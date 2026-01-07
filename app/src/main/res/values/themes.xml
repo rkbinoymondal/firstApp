@@ -1,0 +1,19 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.QuestionBank" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorHeader">@color/header_bg</item>
+        <item name="colorTitle">@color/title_light</item>
+        <item name ="colorIcon">@color/icon_light</item>
+        <item name = "android:colorBackground">@color/light_bg</item>
+        <item name = "colorSurface">@color/outer_card_bg_light</item>
+        <item name = "colorSurfaceContainer">@color/inner_card_bg_light</item>
+        <item name="colorSurfaceVariant">@color/inputfield_bg_light</item>
+        <item name="colorPrimary">@color/btn</item>
+        <item name="colorOnPrimary">@color/btn_text</item>
+        <item name="colorBottomToolbar">@color/bottom_toolbar_light</item>
+    </style>
+
+    <style name="Theme.QuestionBank" parent="Base.Theme.QuestionBank" />
+</resources>
