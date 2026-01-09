@@ -17,7 +17,7 @@ class Splash_Activity : AppCompatActivity() {
 
         Handler(Looper.getMainLooper()).postDelayed({
             val sharedPref = getSharedPreferences("userdata",MODE_PRIVATE)
-            val name = sharedPref.getString("name","N/A")
+            val name = sharedPref.getString("name",null)
 
             if (name.isNullOrEmpty()){
                 val intent = Intent(this, Login_Page::class.java)

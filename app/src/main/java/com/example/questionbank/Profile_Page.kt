@@ -17,11 +17,11 @@ class Profile_Page : AppCompatActivity() {
         setContentView(R.layout.activity_profile_page)
 
         val sharedPref = getSharedPreferences("userdata",MODE_PRIVATE)
-        val name = sharedPref.getString("name","N/A")
-        val email = sharedPref.getString("email","N/A")
-        val phone = sharedPref.getString("phone","N/A")
-        val age = sharedPref.getString("age","N/A")
-        val state = sharedPref.getString("state","N/A")
+        val name = sharedPref.getString("name",null) ?: "Not Found"
+        val email = sharedPref.getString("email",null) ?: "Not Found"
+        val phone = sharedPref.getString("phone",null) ?: "Not Found"
+        val age = sharedPref.getString("age",null) ?: "Not Found"
+        val state = sharedPref.getString("state",null) ?: "Not Found"
 
         val nameText = findViewById<TextView>(R.id.nameText)
         val emailText = findViewById<TextView>(R.id.emailText)

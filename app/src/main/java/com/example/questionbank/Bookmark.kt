@@ -31,17 +31,17 @@ class Bookmark : AppCompatActivity() {
         val dbmsq2 = sharedPrefDbms2.contains("dbms2")
 
         if (dbmsq1 && dbmsq2){
-            val bookmarkdbmsq1 = sharedPrefDbms1.getString("dbms1","N/A")
-            val bookmarkdbmsq2 = sharedPrefDbms2.getString("dbms2","N/A")
+            val bookmarkdbmsq1 = sharedPrefDbms1.getString("dbms1",null) ?: "No Bookmark"
+            val bookmarkdbmsq2 = sharedPrefDbms2.getString("dbms2",null) ?: "No Bookmark"
             dbms1.text = bookmarkdbmsq1
             dbms2.text = bookmarkdbmsq2
         }
         else if (dbmsq1){
-            val bookmarkdbmsq1 = sharedPrefDbms1.getString("dbms1","N/A")
+            val bookmarkdbmsq1 = sharedPrefDbms1.getString("dbms1",null) ?: "No Bookmark"
             dbms1.text = bookmarkdbmsq1
         }
         else if (dbmsq2){
-            val bookmarkdbmsq2 = sharedPrefDbms2.getString("dbms2","N/A")
+            val bookmarkdbmsq2 = sharedPrefDbms2.getString("dbms2",null) ?: "No Bookmark"
             dbms1.text = bookmarkdbmsq2
         }
         if (dbms1.text=="" && dbms2.text==""){
@@ -59,17 +59,17 @@ class Bookmark : AppCompatActivity() {
         val cttpq2 = sharedPrefCttp2.contains("cttp2")
 
         if (cttpq1 && cttpq2){
-            val bookmarkcttpq1 = sharedPrefCttp1.getString("cttp1","N/A")
-            val bookmarkcttpq2 = sharedPrefCttp2.getString("cttp2","N/A")
+            val bookmarkcttpq1 = sharedPrefCttp1.getString("cttp1",null) ?: "No Bookmark"
+            val bookmarkcttpq2 = sharedPrefCttp2.getString("cttp2",null) ?: "No Bookmark"
             cttp1.text = bookmarkcttpq1
             cttp2.text = bookmarkcttpq2
         }
         else if (cttpq1){
-            val bookmarkcttpq1 = sharedPrefCttp1.getString("cttp1","N/A")
+            val bookmarkcttpq1 = sharedPrefCttp1.getString("cttp1",null) ?: "No Bookmark"
             cttp1.text = bookmarkcttpq1
         }
         else if (cttpq2){
-            val bookmarkcttpq2 = sharedPrefCttp2.getString("cttp2","N/A")
+            val bookmarkcttpq2 = sharedPrefCttp2.getString("cttp2",null) ?: "No Bookmark"
             cttp1.text = bookmarkcttpq2
         }
         if (cttp1.text=="" && cttp2.text==""){

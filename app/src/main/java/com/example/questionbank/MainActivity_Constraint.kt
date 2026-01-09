@@ -17,7 +17,7 @@ class MainActivity_Constraint : AppCompatActivity() {
         setContentView(R.layout.activity_main_constraint)
 
         val sharedPref = getSharedPreferences("userdata",MODE_PRIVATE)
-        val fullName = sharedPref.getString("name","N/A") ?: ""
+        val fullName = sharedPref.getString("name",null) ?: ""
 
         val wlcmTxt = findViewById<TextView>(R.id.wlcmTxt)
         val profileBtn = findViewById<MaterialButton>(R.id.profileButton)
