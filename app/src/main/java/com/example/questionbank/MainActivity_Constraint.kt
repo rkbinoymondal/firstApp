@@ -1,6 +1,7 @@
 package com.example.questionbank
 
 import android.content.Intent
+import android.opengl.Matrix
 import android.os.Bundle
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
@@ -22,6 +23,12 @@ class MainActivity_Constraint : AppCompatActivity() {
         val profileBtn = findViewById<MaterialButton>(R.id.profileButton)
         val dbmsBtn = findViewById<MaterialButton>(R.id.dbmsBtn)
         val cttpBtn = findViewById<MaterialButton>(R.id.cttpBtn)
+        val bookmarkBtn = findViewById<MaterialButton>(R.id.bookmark)
+
+        bookmarkBtn.setOnClickListener {
+            val intent = Intent(this, Bookmark::class.java)
+            startActivity(intent)
+        }
 
         val firstName = fullName.substringBefore(" ")
         wlcmTxt.text = "Welcome\n$firstName"

@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.QuestionBank">
         <activity
+            android:name=".Bookmark"
+            android:exported="false" />
+        <activity
+            android:name=".Login_Page"
+            android:exported="false" />
+        <activity
             android:name=".CTTP_Q2"
             android:exported="false" />
         <activity
@@ -30,16 +36,7 @@
             android:name=".Profile_Page"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
-            android:exported="false" />
-        <activity
-            android:name=".QuestionActivity2"
-            android:exported="false" />
-        <activity
-            android:name=".QuestionsActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Login_Page"
+            android:name=".Splash_Activity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

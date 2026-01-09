@@ -37,8 +37,7 @@ class Profile_Page : AppCompatActivity() {
         stateText.text = state
 
         backBtn.setOnClickListener {
-            val intent = Intent(this, MainActivity_Constraint::class.java)
-            startActivity(intent)
+            finish()
         }
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->

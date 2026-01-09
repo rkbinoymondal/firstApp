@@ -23,8 +23,7 @@ class DBMS_Q1 : AppCompatActivity() {
         val backBtn = findViewById<MaterialButton>(R.id.backBtn)
 
         backBtn.setOnClickListener {
-            val intent = Intent(this, MainActivity_Constraint::class.java)
-            startActivity(intent)
+            finish()
         }
 
         val radGrp = findViewById<RadioGroup>(R.id.radioGroup)
@@ -45,6 +44,37 @@ class DBMS_Q1 : AppCompatActivity() {
         val explanationText = findViewById<TextView>(R.id.explanationText)
         val nextBtn = findViewById<MaterialButton>(R.id.nextBtn)
         val sbmtBtn = findViewById<MaterialButton>(R.id.submitBtn)
+        val bookmarkBtn = findViewById<MaterialButton>(R.id.bookmarkButton)
+
+        val sharedPrefDbms1 = getSharedPreferences("bookmarkdbms1",MODE_PRIVATE)
+        val editor = sharedPrefDbms1.edit()
+
+        var isBookmarked = sharedPrefDbms1.contains("dbms1")
+
+        if (isBookmarked){
+            bookmarkBtn.setIconResource(R.drawable.baseline_bookmark_24)
+        }
+        else{
+            bookmarkBtn.setIconResource(R.drawable.outline_bookmark_24)
+        }
+
+        bookmarkBtn.setOnClickListener {
+            isBookmarked = !isBookmarked
+
+            if (isBookmarked){
+                bookmarkBtn.setIconResource(R.drawable.baseline_bookmark_24)
+                Toast.makeText(this,"Question Bookmarked Successfully",Toast.LENGTH_SHORT).show()
+
+                editor.putString("dbms1","Q.1")
+                editor.apply()
+            }
+            else{
+                bookmarkBtn.setIconResource(R.drawable.outline_bookmark_24)
+
+                editor.remove("dbms1")
+                editor.apply()
+            }
+        }
 
         nextBtn.setOnClickListener {
             val intent = Intent(this, DBMS_Q2::class.java)
@@ -75,7 +105,7 @@ class DBMS_Q1 : AppCompatActivity() {
             val selectedId = radGrp.checkedRadioButtonId
 
             if (selectedId==-1){
-                Toast.makeText(this,"Please select an option",Toast.LENGTH_LONG).show()
+                Toast.makeText(this,"Please select an option",Toast.LENGTH_SHORT).show()
             }
             else{
                 if (radBtn3.isChecked){

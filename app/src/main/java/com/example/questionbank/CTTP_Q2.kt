@@ -23,8 +23,7 @@ class CTTP_Q2 : AppCompatActivity() {
         val backBtn = findViewById<MaterialButton>(R.id.backBtn)
 
         backBtn.setOnClickListener {
-            val intent = Intent(this, CTTP_Q1::class.java)
-            startActivity(intent)
+            finish()
         }
 
         val checkBox1 = findViewById<CheckBox>(R.id.optn1)
@@ -43,10 +42,40 @@ class CTTP_Q2 : AppCompatActivity() {
         val explanationText = findViewById<TextView>(R.id.explanationText)
         val previousBtn = findViewById<MaterialButton>(R.id.previousBtn)
         val sbmtBtn = findViewById<MaterialButton>(R.id.submitBtn)
+        val bookmarkBtn = findViewById<MaterialButton>(R.id.bookmarkButton)
+
+        val sharedPrefCttp2 = getSharedPreferences("bookmarkcttp2",MODE_PRIVATE)
+        val editor = sharedPrefCttp2.edit()
+
+        var isBookmarked = sharedPrefCttp2.contains("cttp2")
+
+        if (isBookmarked){
+            bookmarkBtn.setIconResource(R.drawable.baseline_bookmark_24)
+        }
+        else{
+            bookmarkBtn.setIconResource(R.drawable.outline_bookmark_24)
+        }
+
+        bookmarkBtn.setOnClickListener {
+            isBookmarked = !isBookmarked
+
+            if (isBookmarked){
+                bookmarkBtn.setIconResource(R.drawable.baseline_bookmark_24)
+                Toast.makeText(this,"Question Bookmarked Successfully",Toast.LENGTH_SHORT).show()
+
+                editor.putString("cttp2","Q.2")
+                editor.apply()
+            }
+            else{
+                bookmarkBtn.setIconResource(R.drawable.outline_bookmark_24)
+
+                editor.remove("cttp2")
+                editor.apply()
+            }
+        }
 
         previousBtn.setOnClickListener {
-            val intent = Intent(this, CTTP_Q1::class.java)
-            startActivity(intent)
+            finish()
         }
 
         fun resetState(){
@@ -75,7 +104,7 @@ class CTTP_Q2 : AppCompatActivity() {
         sbmtBtn.setOnClickListener {
 
             if (!(checkBox1.isChecked || checkBox2.isChecked || checkBox3.isChecked || checkBox4.isChecked)){
-                Toast.makeText(this,"Please select an option",Toast.LENGTH_LONG).show()
+                Toast.makeText(this,"Please select an option",Toast.LENGTH_SHORT).show()
                 optn1.text = ""
                 optn1.setCompoundDrawablesWithIntrinsicBounds(0,0,0,0)
                 checkBox1.setTextColor(themeTextColor)
