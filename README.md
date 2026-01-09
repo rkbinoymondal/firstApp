@@ -6,6 +6,11 @@ A Question Bank which includes : <br>
 - Login Page<br>
 - Main Page (Containing Description and Subjects)<br>
 - Profile Details Page<br>
+<<<<<<< HEAD
 - Bookmarks Page<br>
 - Single Choice and Multiple Choice Questions of each subject(Questions can be bookmarked for future reference)<br>
 - It supports both light and dark mode<br>
+=======
+- Single Choice and Multiple Choice Questions of each subject(Questions can be bookmarked for future reference)<br>
+- It supports both light and dark mode<br>
+>>>>>>> 35ffe387cb4680b253b3e26b84352cc3840587d5
