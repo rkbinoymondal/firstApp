@@ -122,8 +122,6 @@ class DBMS_Q1 : AppCompatActivity() {
                     radBtn3.setTextColor(resources.getColor(android.R.color.holo_green_dark))
                     optn3.setTextColor(resources.getColor(android.R.color.holo_green_dark))
                     optn3.setCompoundDrawablesWithIntrinsicBounds(R.drawable.baseline_check_circle_green,0,0,0)
-                    explanationHeading.text = ""
-                    explanationText.text = ""
                 }
                 else{
                     if (radBtn1.isChecked){
@@ -137,7 +135,6 @@ class DBMS_Q1 : AppCompatActivity() {
                         optn1.setTextColor(resources.getColor(android.R.color.holo_red_dark))
                         optn1.setCompoundDrawablesWithIntrinsicBounds(R.drawable.baseline_cancel_red,0,0,0)
                         radBtn1.setTextColor(resources.getColor(android.R.color.holo_red_dark))
-                        optn1.setTextColor(resources.getColor(android.R.color.holo_red_dark))
                     }
                     else if (radBtn2.isChecked){
                         optn1.text = ""
@@ -150,7 +147,6 @@ class DBMS_Q1 : AppCompatActivity() {
                         optn2.setTextColor(resources.getColor(android.R.color.holo_red_dark))
                         optn2.setCompoundDrawablesWithIntrinsicBounds(R.drawable.baseline_cancel_red,0,0,0)
                         radBtn2.setTextColor(resources.getColor(android.R.color.holo_red_dark))
-                        optn2.setTextColor(resources.getColor(android.R.color.holo_red_dark))
                     }
                     else{
                         optn1.text = ""
@@ -163,7 +159,6 @@ class DBMS_Q1 : AppCompatActivity() {
                         optn4.setTextColor(resources.getColor(android.R.color.holo_red_dark))
                         optn4.setCompoundDrawablesWithIntrinsicBounds(R.drawable.baseline_cancel_red,0,0,0)
                         radBtn4.setTextColor(resources.getColor(android.R.color.holo_red_dark))
-                        optn4.setTextColor(resources.getColor(android.R.color.holo_red_dark))
                     }
                     optn3.text = "Correct"
                     radBtn3.setTextColor(resources.getColor(android.R.color.holo_green_dark))
